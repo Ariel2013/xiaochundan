@@ -1,8 +1,20 @@
 <template>
-  <div class="home_bg">
-    <div>
-      666
+  <div>
+    <div class="banner">
+      <canvas id='canvas'></canvas>
     </div>
+    <span>divvv</span>
+    <!--<el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo nav_menu" mode="horizontal" @select="handleSelect">-->
+      <!--<el-menu-item>处理中心666</el-menu-item>-->
+      <!--<el-menu-item index="1" class="nav">处理中心</el-menu-item>-->
+      <!--<el-menu-item index="2" class="nav">订单管理</el-menu-item>-->
+    <!--</el-menu>-->
+    <!--<div>-->
+      <!--666-->
+    <!--</div>-->
+    <!--<el-button @click="diyfun">按钮</el-button>-->
+    <!--<div v-on:click="diyfun">click</div>-->
+    <button @click='diyfun'></button>
   </div>
 </template>
 <style>
@@ -13,25 +25,41 @@
     background-position: 50% 50%;
     background-image: url('../assets/home_bg.jpg');
     background-attachment: fixed;
-  }
-  .home_bg:before {
-    content: '';
-    display: block !important;
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.39);
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+    height: auto;
+    text-align: center;
+  }
+  .canvas {
+    background: #000;
+  }
+  /*.home_bg:before {*/
+    /*content: ''*/
+    /*display: block !important*/
+    /*position: absolute*/
+    /*top: 0*/
+    /*left: 0*/
+    /*width: 100%*/
+    /*height: 100%*/
+    /*background: rgba(0,0,0,0.39)*/
+    /*-webkit-transform: translate3d(0,0,0)*/
+    /*transform: translate3d(0,0,0)*/
+  /*}*/
+  .nav_menu {s
+    display: inline-block
   }
 </style>
 <script>
+  import myfun from '../assets/canvas.js'
   export default {
     name: 'home',
     data () {
       return {}
+    },
+    methods: {
+      diyfun: function () {
+        myfun()
+      }
     }
   }
+
 </script>
