@@ -7,8 +7,10 @@ var myfun = function () {
   window.onresize = resize
 
   function resize () {
-    canvas.height = document.getElementById('canvas').parent('.banner').height()
-    canvas.width = document.getElementById('canvas').parent('.banner').width()
+    // canvas.height = document.getElementById('banner').height()
+    // canvas.width = document.getElementById('banner').width()
+    canvas.height = 500
+    canvas.width = 500
   }
 
   var RAF = (function () {
@@ -116,6 +118,4 @@ var myfun = function () {
     RAF(animate)
   }
 }
-export default {
-  myfun
-}
+module.exports = myfun

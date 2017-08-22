@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="banner">
-      <canvas id='canvas'></canvas>
+    <div class="banner" id="banner">
+      <canvas id='canvas' class="canvas"></canvas>
     </div>
     <span>divvv</span>
     <!--<el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo nav_menu" mode="horizontal" @select="handleSelect">-->
@@ -44,12 +44,13 @@
     /*-webkit-transform: translate3d(0,0,0)*/
     /*transform: translate3d(0,0,0)*/
   /*}*/
-  .nav_menu {s
+  .nav_menu {
     display: inline-block
   }
 </style>
 <script>
   import myfun from '../assets/canvas.js'
+  import util from '../assets/util.js'
   export default {
     name: 'home',
     data () {
@@ -58,6 +59,8 @@
     methods: {
       diyfun: function () {
         myfun()
+//        console.log(myfun)
+        util()
       }
     }
   }
