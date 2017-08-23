@@ -9,8 +9,8 @@ var myfun = function () {
   function resize () {
     // canvas.height = document.getElementById('banner').height()
     // canvas.width = document.getElementById('banner').width()
-    canvas.height = 500
-    canvas.width = 500
+    canvas.height = document.getElementById('home_banner').offsetHeight
+    canvas.width = document.getElementById('home_banner').offsetWidth
   }
 
   var RAF = (function () {

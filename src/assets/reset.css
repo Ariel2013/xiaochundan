@@ -1,0 +1,255 @@
+@charset "utf-8";
+*{
+  margin:0;
+  padding:0;
+  text-decoration:none;
+  list-style:none;
+  font-size:14px;
+  font-style:normal;
+  font-weight:normal;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  /*  -webkit-user-select: none; */
+}
+html, body {
+  /* height: 100%; */
+  width:100%;
+  background:#fdfdfd;
+}
+a{
+  text-decoration:none;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix{*zoom:1;}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.invisible{
+  display:none;
+}
+/* 蒙版 */
+.mask,.share-mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  /*  z-index: 9;   */
+  z-index: 11;         /*body默认的z-index是0，比body大，有限于body  */
+  background-color: #000;
+  opacity: 0.8;
+  top: 0;
+  display:none;
+}
+
+/* 高亮蒙版 */
+.highlight{
+  width: 100%;
+  position: fixed;
+  z-index: 11;         /*body默认的z-index是0，比body大，有限于body  */
+  background-color: #000;
+  opacity: 0.5;
+  bottom: 0;
+  display:none;
+
+}
+.dark{
+  position:absolute;
+  height:100%;
+  background:#000;
+  width:100%;
+  opacity:0.35;
+}
+
+
+/* 悬浮在底部的button */
+.bottom-btn{
+  /* position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    text-align: center;
+    height: 1.1rem;
+    line-height: 1.1rem;
+       border-top: 1px solid #E6E6E6; */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.bottom-btn>div {
+  text-align: center;
+  display: inline-block;
+  font-size: 18px;
+  width: 100%;
+  /* padding-top: 0.29rem;
+  padding-bottom: 0.31rem; */
+  height: 47px;
+  line-height: 47px;
+}
+.two-btn>div{
+  width: 50%;
+  float: left;
+}
+.grey-em-btn{
+  color: #4166D1;
+  background: rgba(255,255,255,0.9);
+}
+.green-em-btn{
+  border: 1px solid #1AAD19;
+  color:#1AAD19;
+}
+.green-em-bold-btn{
+  border: 2px solid #1AAD19;
+  color:#1AAD19;
+}
+.blue-btn{
+  background-color: rgba(83,125,249,0.9);
+  color:#fff;
+}
+.red-btn{
+  background:#E64340;
+  color:#fff;
+}
+.disable-btn {
+  background-color: rgba(117, 151, 250, 0.50);
+  color: rgba(249, 247, 255, 0.5);
+}
+
+/* 按钮反馈样式 */
+.blue-btn,
+.grey-em-btn,
+.green-em-btn,
+.green-em-bold-btn,
+.red-btn,
+.bg-red-b,
+.disable-btn{
+  -webkit-tap-highlight-color:transparent;
+}
+.grey-em-btn:active,
+.bg-red-b:active{
+  box-shadow: inset 0 0 100px rgba(236, 236, 236, 0.5);
+}
+.blue-btn:active{
+  box-shadow: inset 0 0 100px rgba(59,90,183, 1);
+}
+/*disable按钮的时候取消反馈样式*/
+.disable-btn:active{
+  box-shadow: none!important;
+}
+
+/* 事件封面上的发起人及其头像 */
+.sponsor{
+  position:absolute;
+  bottom:0.4rem;
+  left:0.28rem;
+}
+.sponsor-img{
+  width:0.9rem;
+  height:0.9rem;
+  border-radius:50%;
+  display:inline-block;
+  vertical-align: middle;
+  margin-right:0.1rem;
+}
+.sponsor-name{
+  font-size:0.24rem;
+  color:#fff;
+  display: inline-block;
+  vertical-align: middle;
+}
+.sponsor-name p{
+  text-shadow:1px 1px 1px black
+}
+/* modal of submit & delete */
+.check-modal,.delete-modal,.delete-vote-modal{
+  position:fixed;
+  top:3rem;
+  left:0;
+  right:0;
+  margin: auto;
+  width:74.5%;
+  z-index:12;
+  border-radius: 8px;
+  display:none;
+  background:#fff;
+}
+.check-modal>h1{
+  margin-top: 0.46rem;
+  margin-bottom: 0.26rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color: #000;
+}
+.check-modal>p{
+  font-size: 0.26rem;
+  color: #b2b2b2;
+  text-align: center;
+  margin-bottom: 0.26rem;
+}
+.check-modal>div{
+  color: #02bb00;
+  width:100%;
+  border-top:1px solid #e5e5e5;
+  padding-top:0.2rem;
+  padding-bottom: 0.3rem;
+  font-size: 0.36rem;
+  text-align: center;
+}
+.delete-modal>h1{
+  margin-top:0.46rem;
+  margin-bottom:0.46rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color:#000;
+}
+.delete-vote-modal>h1{
+  margin-top:0.46rem;
+  margin-bottom:0.1rem;
+  text-align: center;
+  font-size: 0.36rem;
+  color:#000;
+}
+.delete-vote-modal>p{
+  text-align: center;
+  color: #b2b2b2;
+  margin-bottom: 0.1rem;
+}
+/* 有两个格的modal-footer */
+.modal-footer{
+  width:100%;
+  border-top:1px solid #e5e5e5;
+}
+.modal-footer td{
+  width:50%;
+  text-align: center;
+  padding-top:0.2rem;
+  padding-bottom: 0.3rem;
+  font-size: 0.36rem;
+  color: #000;
+}
+.modal-footer-left{
+  border-right:1px solid #e5e5e5;
+}
+.green{
+  color:#02bb00 !important;
+}
+.red{
+  color:#E64340 !important;
+}
+
+/* 剪裁模块css */
+.cropper-container{
+  position: fixed !important;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.cropper-bg {
+  /* background: #fff; */
+}
